@@ -1,17 +1,11 @@
-class FirmsController < ApplicationController
-  before_action :authenticate_user!
-  before_action :set_firm
+class FirmsController < MainController
   layout 'firm'
 
-  def dashboard
+  def index
+    # NOTE: Not implemented on purpose
   end
 
   def attorneys_list
-  end
-
-  private
-  def set_firm
-    @firm = current_user.firm
   end
 end
 
