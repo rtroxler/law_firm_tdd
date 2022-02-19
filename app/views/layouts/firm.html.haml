@@ -14,4 +14,13 @@
       %p.alert.alert-success= notice
     - if alert
       %p.alert.alert-danger= alert
+
+    %header
+      %h1.text-3xl
+        = link_to @firm.name, root_path
+      %nav
+        = link_to 'Attorney List', attorneys_list_path
+        = link_to 'About Us', nil
+        = link_to "Log Out", destroy_user_session_path, method: :delete
+
     = yield
