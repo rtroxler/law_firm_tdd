@@ -250,6 +250,7 @@ DEPENDENCIES
   capybara
   debug
   devise (~> 4.8)
+  haml
   haml-rails (~> 2.0)
   importmap-rails
   jbuilder
