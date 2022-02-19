@@ -1,1 +1,39 @@
-hi
+%table
+  %thead
+    %tr
+      %th First Name
+      %th Middle Name
+      %th Last Name
+      %th Suffix
+  %tbody
+    - 5.times do
+      %tr
+        %td Bob
+        %td S
+        %td Wasabi
+        %td TDD
+
+%br
+%h4 Add an Attorney:
+= form_with model: User.new do |f|
+  %p
+    = f.label :first_name
+    %br
+    = f.text_field :first_name
+
+  %p
+    = f.label :middle_name
+    %br
+    = f.text_field :middle_name
+
+  %p
+    = f.label :last_name
+    %br
+    = f.text_field :last_name
+
+  %p
+    = f.label :suffix
+    %br
+    = f.text_field :suffix
+
+  = f.submit "Add Attorney"
