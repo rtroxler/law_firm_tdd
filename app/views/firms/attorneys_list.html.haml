@@ -15,7 +15,7 @@
 
 %br
 %h4 Add an Attorney:
-= form_with model: User.new do |f|
+= form_for User.new do |f|
   %p
     = f.label :first_name
     %br
