@@ -2,8 +2,8 @@
 
 A small Rails application that contains a decent TDD exercise.
 
-Ruby 3.0.3
-Rails 7.0.1
+* Ruby 3.0.3
+* Rails 7.0.1
 
 ## Getting Started
 
@@ -27,3 +27,8 @@ The Attorneys List is a combination of the index of existing attorneys, and a fo
 ## Exercise
 
 At this point you should close the browser tab and begin writing a failing spec that asserts that you can add a new attorney and that they're details show up in the attorneys list, and begin the fix/test feedback loop until you are able to get your spec to pass.
+
+In true TDD fashion it is recommended that at each error step in the test loop you only make the changes necessary to fix each particular error. Once the spec passes, you are free to do any amount of refactoring you desire.
+
+[Red, Green, Refactor](https://www.codecademy.com/article/tdd-red-green-refactor)
+
