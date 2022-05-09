@@ -1,4 +1,12 @@
 FactoryBot.define do
+  factory :attorney do
+    first_name { "MyString" }
+    middle_name { "MyString" }
+    last_name { "MyString" }
+    suffix { "MyString" }
+    firm { nil }
+  end
+
   factory(:user) do
     email { Faker::Internet.email }
     password { Faker::Internet.password }

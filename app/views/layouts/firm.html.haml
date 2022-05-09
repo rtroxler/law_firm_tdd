@@ -19,7 +19,7 @@
       %h1.text-3xl
         = link_to @firm.name, root_path
       %nav
-        = link_to 'Attorney List', attorneys_list_path
+        = link_to 'Attorney List', firm_attorneys_path(@firm)
         = link_to 'About Us', about_us_path
         = link_to "Log Out", destroy_user_session_path, method: :delete
 

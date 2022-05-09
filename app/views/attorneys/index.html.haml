@@ -6,16 +6,16 @@
       %th Last Name
       %th Suffix
   %tbody
-    - 5.times do
+    - @firm.attorneys.each do |attorney|
       %tr
-        %td Bob
-        %td S
-        %td Wasabi
-        %td TDD
+        %td= attorney.first_name
+        %td= attorney.middle_name
+        %td= attorney.last_name
+        %td= attorney.suffix
 
 %br
 %h4 Add an Attorney:
-= form_for User.new do |f|
+= form_for [@firm, Attorney.new], html: { id: 'attorney-form' } do |f|
   %p
     = f.label :first_name
     %br

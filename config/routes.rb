@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "firms#dashboard"
   get 'about_us', to: "firms#about_us", as: :about_us
-  resources :firms
+  resources :firms do
+    resources :attorneys
+  end
 
   get 'attorneys_list', to: 'firms#attorneys_list', as: :attorneys_list
 end
