@@ -20,6 +20,7 @@ user = User.create first_name: 'Some',
                              middle_name: Faker::Name.first_name,
                              last_name: Faker::Name.last_name,
                              suffix: Faker::Name.suffix,
+                             rating: rand(1..5),
                              firm: firm)
 
   (1..3).each do
