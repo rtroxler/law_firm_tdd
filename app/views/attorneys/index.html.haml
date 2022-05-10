@@ -1,4 +1,4 @@
-%table
+%table.table.table-compact.text-center
   %thead
     %tr
       %th First Name
@@ -13,27 +13,26 @@
         %td= attorney.last_name
         %td= attorney.suffix
 
-%br
-%h4 Add an Attorney:
-= form_for [@firm, Attorney.new], html: { id: 'attorney-form' } do |f|
-  %p
-    = f.label :first_name
-    %br
-    = f.text_field :first_name
+.card.bg-neutral.flex.place-items-center{ class: 'w-2/6' }
+  .card-body
+    %h4.text-3xl.border-b.border-accent.card-title Add an Attorney
+    = form_for [@firm, Attorney.new], html: { id: 'attorney-form' } do |f|
+      .grid.grid-cols-2.gap-8
+        .field
+          = f.label :first_name, class: 'label'
+          = f.text_field :first_name, class: 'input'
 
-  %p
-    = f.label :middle_name
-    %br
-    = f.text_field :middle_name
+        .field
+          = f.label :middle_name, class: 'label'
+          = f.text_field :middle_name, class: 'input'
 
-  %p
-    = f.label :last_name
-    %br
-    = f.text_field :last_name
+        .field
+          = f.label :last_name, class: 'label'
+          = f.text_field :last_name, class: 'input'
 
-  %p
-    = f.label :suffix
-    %br
-    = f.text_field :suffix
+        .field
+          = f.label :suffix, class: 'label'
+          = f.text_field :suffix, class: 'input'
 
-  = f.submit "Add Attorney"
+      .card-actions.justify-center.pt-4
+        = f.submit "Add Attorney", class: 'btn btn-primary'

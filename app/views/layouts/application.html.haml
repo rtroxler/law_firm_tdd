@@ -1,5 +1,5 @@
 !!!
-%html
+%html.w-full.h-full{ data: { theme: :forest } }
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title LawFirmTdd
@@ -8,9 +8,11 @@
     = csp_meta_tag
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
     = javascript_importmap_tags
-  %body
+    - if Rails.env.development?
+      = hotwire_livereload_tags
+  %body.grid.place-items-center.w-full.h-full
     - if notice
-      %p.alert.alert-success= notice
+      .alert.alert-success= notice
     - if alert
-      %p.alert.alert-danger= alert
+      .alert.alert-danger= alert
     = yield
