@@ -19,10 +19,10 @@
     %header.flex.flex-col.justify-center.items-center.gap-4.p-8.bg-neutral.border-b.border-secondary.border-solid
       %h1.text-3xl
         = link_to @firm.name, root_path
-      %nav.btn-group
+      %nav.navbar
         = link_to 'Attorney List', firm_attorneys_path(@firm), class: 'btn btn-primary'
         = link_to 'About Us', about_us_path, class: 'btn btn-primary'
-        = link_to "Log Out", destroy_user_session_path, method: :delete, class: 'btn btn-primary'
+        = link_to "Log Out", destroy_user_session_path, class: 'btn btn-primary'
 
     %main.flex.flex-col.gap-4.justify-center.items-center.pt-8
       = yield
