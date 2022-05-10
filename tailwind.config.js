@@ -1,6 +1,7 @@
 module.exports = {
   content: [
-    './app/views/**/*.html.haml',
+    './**/*.html.haml',
+    './app/components/**/*.rb',
     './app/helpers/**/*.rb',
     './app/assets/stylesheets/**/*.css',
     './app/javascript/**/*.js'
