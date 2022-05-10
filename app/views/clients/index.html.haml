@@ -1,0 +1,16 @@
+= turbo_stream_from 'clients'
+
+%table.table.table-compact.text-center#clients
+  %thead
+    %tr
+      %th First Name
+      %th Middle Name
+      %th Last Name
+      %th Email
+      %th Attorney
+  %tbody
+    = render @clients
+.card.bg-neutral.flex.place-items-center{ class: 'w-2/6' }
+  .card-body
+    %h4.text-3xl.border-b.border-accent.card-title Add a Client
+    = render 'form'

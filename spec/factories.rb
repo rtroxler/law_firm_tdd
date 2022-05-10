@@ -1,4 +1,13 @@
 FactoryBot.define do
+  factory :client do
+    first_name { "MyString" }
+    middle_name { "MyString" }
+    last_name { "MyString" }
+    attorney { nil }
+    email { "MyString" }
+    firm { nil }
+  end
+
   factory :attorney do
     first_name { "MyString" }
     middle_name { "MyString" }

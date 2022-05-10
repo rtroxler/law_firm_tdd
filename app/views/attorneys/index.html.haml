@@ -5,6 +5,7 @@
       %th Middle Name
       %th Last Name
       %th Suffix
+      %th Clients
   %tbody
     - @firm.attorneys.each do |attorney|
       %tr
@@ -12,6 +13,7 @@
         %td= attorney.middle_name
         %td= attorney.last_name
         %td= attorney.suffix
+        %td= attorney.clients.count
 
 .card.bg-neutral.flex.place-items-center{ class: 'w-2/6' }
   .card-body

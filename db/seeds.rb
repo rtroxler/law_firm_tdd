@@ -15,12 +15,21 @@ user = User.create first_name: 'Some',
                    password: 'password',
                    password_confirmation: 'password'
 
-(1..10).each do |i|
-  Attorney.create(first_name: Faker::Name.first_name,
-                  middle_name: Faker::Name.first_name,
-                  last_name: Faker::Name.last_name,
-                  suffix: Faker::Name.suffix,
-                  firm: firm)
+(1..5).each do
+  attorney = Attorney.create(first_name: Faker::Name.first_name,
+                             middle_name: Faker::Name.first_name,
+                             last_name: Faker::Name.last_name,
+                             suffix: Faker::Name.suffix,
+                             firm: firm)
+
+  (1..3).each do
+    client = Client.create(first_name: Faker::Name.first_name,
+                           middle_name: Faker::Name.first_name,
+                           last_name: Faker::Name.last_name,
+                           email: Faker::Internet.email,
+                           firm: firm,
+                           attorney: attorney)
+  end
 end
 
 p 'Done'

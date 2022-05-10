@@ -1,0 +1,24 @@
+= form_for [@firm, Client.new], html: { id: 'client-form' } do |f|
+  .grid.grid-cols-2.gap-8
+    .field
+      = f.label :first_name, class: 'label'
+      = f.text_field :first_name, class: 'input'
+
+    .field
+      = f.label :middle_name, class: 'label'
+      = f.text_field :middle_name, class: 'input'
+
+    .field
+      = f.label :last_name, class: 'label'
+      = f.text_field :last_name, class: 'input'
+
+    .field
+      = f.label :email, class: 'label'
+      = f.email_field :email, class: 'input'
+
+    .field
+      = f.label :attorney, class: 'label'
+      = f.collection_select :attorney_id, @firm.attorneys, :id, :full_name, {}, class: 'select'
+
+  .card-actions.justify-center.pt-4
+    = f.submit "Add Client", class: 'btn btn-primary'
