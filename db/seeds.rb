@@ -15,6 +15,24 @@ user = User.create first_name: 'Some',
                    password: 'password',
                    password_confirmation: 'password'
 
+(1..5).each do
+  attorney = Attorney.create(first_name: Faker::Name.first_name,
+                             middle_name: Faker::Name.first_name,
+                             last_name: Faker::Name.last_name,
+                             suffix: Faker::Name.suffix,
+                             rating: rand(1..5),
+                             firm: firm)
+
+  (1..3).each do
+    client = Client.create(first_name: Faker::Name.first_name,
+                           middle_name: Faker::Name.first_name,
+                           last_name: Faker::Name.last_name,
+                           email: Faker::Internet.email,
+                           firm: firm,
+                           attorney: attorney)
+  end
+end
+
 p 'Done'
 p "Log in with:\n"
 p 'Email: person@email.com'

@@ -1,27 +1,28 @@
 !!!
-%html
+%html.w-full.h-full{ data: { theme: :forest } }
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title LawFirmTdd
     %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}/
-    %link{ :rel => 'stylesheet', :href => 'https://cdn.simplecss.org/simple.min.css' }/
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
     = javascript_importmap_tags
+    - if Rails.env.development?
+      = hotwire_livereload_tags
   %body
     - if notice
-      %p.alert.alert-success= notice
+      .alert.alert-success= notice
     - if alert
-      %p.alert.alert-danger= alert
+      .alert.alert-danger= alert
 
-    %header
+    %header.flex.flex-col.justify-center.items-center.gap-4.p-8.bg-neutral.border-b.border-secondary.border-solid
       %h1.text-3xl
         = link_to @firm.name, root_path
-      %nav
-        = link_to 'Attorney List', firm_attorneys_path(@firm)
-        = link_to 'About Us', about_us_path
-        = link_to "Log Out", destroy_user_session_path, method: :delete
+      %nav.navbar.navbar-center.w-fit
+        = link_to 'Attorney List', firm_attorneys_path(@firm), class: 'btn btn-primary'
+        = link_to 'About Us', about_us_path, class: 'btn btn-primary'
+        = link_to "Log Out", destroy_user_session_path, class: 'btn btn-primary'
 
-    %main
+    %main.flex.flex-col.gap-4.justify-center.items-center.pt-8
       = yield

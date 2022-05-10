@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'about_us', to: "firms#about_us", as: :about_us
   resources :firms do
     resources :attorneys
+    resources :clients
   end
 
   get 'attorneys_list', to: 'firms#attorneys_list', as: :attorneys_list
